@@ -1,0 +1,71 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+.game {
+    border: 5px double rgb(161, 161, 161);
+    height: 300px;
+    width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: white;
+}
+
+.perso {
+    height: 50px;
+    width: 50px;
+    background-image: url("https://geekanant.gallerycdn.vsassets.io/extensions/geekanant/chrome-dinosaur-game/0.0.1/1638086697139/Microsoft.VisualStudio.Services.Icons.Default");
+    background-size: 50px 50px;
+    z-index: 1;
+    position: relative;
+    top: 180px;
+}
+
+.jump {
+    animation: saut 0.5s linear;
+}
+
+@keyframes saut {
+    0% {
+        top: 180px;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 180px;
+    }
+}
+
+.obstacle {
+    height: 80px;
+    width: 40px;
+    background-color: green;
+    transform: translate(860px 100px);
+    z-index: 0;
+    animation: cactus 1s infinite linear;
+    position: relative;
+    top: 100px;
+}
+
+@keyframes cactus {
+    0% {
+        left: 900px;
+    }
+    100% {
+        left: -40px;
+    }
+}
+
+.score {
+    color: red;
+    transform: translateY(-100px);
+}
